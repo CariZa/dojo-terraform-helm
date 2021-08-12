@@ -30,6 +30,8 @@ Make sure you are able to run kubectl in the context of your minikube
 
 First, create a folder called "charts".
 
+    $ mkdir charts
+
 You can create a helm chart from a template by running:
 
     $ helm create ./charts/example
@@ -65,9 +67,18 @@ The _helpers.tpl file has your reusable values
 
 Copy your kubernetes *.yaml files over to the templates folder (not the values.yaml file - but all the others)
 
+```
+./charts/example/templates
+  
+  _helpers.tpl
+  deployment.yaml
+  namespace.yaml
+  service.yaml
+```
+
 Replace the values.yaml with the value.yaml in the chart root folder, ./charts/example/values.yaml
 
-    ./charts/example/values.yaml <-- shoulld now have your values inside
+    cat ./charts/example/values.yaml <-- shoulld now have your values inside
 
 Test your chart with these commands:
 

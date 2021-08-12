@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     {{- include "example.labels" . | nindent 4 }}
-  name: {{ include "example.slug" . }}
+  name: {{ include "example.name" . }}
   namespace: {{ include "example.name" . }}
 spec:
   ports:
