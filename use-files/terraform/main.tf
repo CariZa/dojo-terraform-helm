@@ -10,5 +10,5 @@ provider "helm" {
 resource "helm_release" "example" {
   name       = "example-chart"
   chart      = "./charts/example"
-  version    = "0.0.1"
+  version    = "1.16.0"
 }

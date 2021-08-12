@@ -67,6 +67,7 @@ Copy your kubernetes *.yaml files over to the templates folder (not the values.y
 
 Replace the values.yaml with the value.yaml in the chart root folder, ./charts/example/values.yaml
 
+    ./charts/example/values.yaml <-- shoulld now have your values inside
 
 Test your chart with these commands:
 
@@ -137,6 +138,11 @@ Check your new resources on minikube:
 
 Test your service and application:
 
-    $ kubectl port-forward service/example 8001:80 -n example
+    $ kubectl port-forward service/example-chart 8001:80 -n example
 
 Open up on your browser: http://localhost:8001/
+
+Then when you are done you can destroy all the resources you created:
+
+      $ terraform destroy
+    yes
