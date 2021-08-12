@@ -118,7 +118,7 @@ Before continuing please delete the chart:
 
 ### Setup with terraform
 
-Why use terraform with help? Terraform helps manage resources for day 2 problems. When you have tons of applications running on a cluster across many namespaces, it's easy to get architectural drift. What your configuration files define and what is actually on the system start to drift, and there ends up being resources that run on kubernetes that you "loose". Terraform helps with this part.
+Why use terraform with helm? Terraform helps manage resources for day 2 problems. When you have tons of applications running on a cluster across many namespaces, it's easy to get architectural drift. What your configuration files define and what is actually on the system start to drift, and there ends up being resources that run on kubernetes that you "loose". Terraform helps with this part.
 
 Some useful docs
 
