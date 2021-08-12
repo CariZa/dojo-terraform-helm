@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "example.name" . }}
+  labels:
+    {{- include "example.labels" . | nindent 4 }}
+  namespace: example
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels: {{- include "example.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+				{{- include "example.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: "nginx-example"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
+          imagePullPolicy: "{{ .Values.image.imagePullPolicy }}"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
